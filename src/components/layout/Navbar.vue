@@ -2,7 +2,7 @@
   <nav
     :class="[
       'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-      isScrolled ? 'bg-white shadow-md' : 'bg-transparent',
+      isScrolled ? 'bg-white shadow-md' : 'bg-white',
     ]"
   >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,7 +19,7 @@
           <span
             :class="[
               'text-2xl font-bold transition-colors',
-              isScrolled ? 'text-rose-600' : 'text-white',
+              isScrolled ? 'text-rose-600' : 'text-rose-600',
             ]"
           >
             Chenoa
@@ -27,7 +27,7 @@
           <span
             :class="[
               'text-2xl font-light transition-colors',
-              isScrolled ? 'text-gray-800' : 'text-white',
+              isScrolled ? 'text-black' : 'text-black',
             ]"
           >
             Beauty Room
@@ -46,7 +46,7 @@
             :delay="200 + index * 50"
             :class="[
               'text-sm font-medium transition-colors hover:text-rose-500',
-              isScrolled ? 'text-gray-700' : 'text-white',
+              isScrolled ? 'text-gray-700' : 'black',
             ]"
           >
             {{ item.name }}
