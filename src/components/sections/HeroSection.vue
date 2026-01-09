@@ -1,7 +1,7 @@
 <template>
   <section
     id="hero"
-    class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-rose-50 via-pink-50 to-purple-50"
+    class="relative min-h-screen flex items-center justify-center overflow-hidden bg-neutral-50"
   >
     <!-- Background Decoration -->
     <div class="absolute inset-0 overflow-hidden">
@@ -73,15 +73,10 @@
           >
             <div class="relative aspect-square max-w-lg mx-auto">
               <!-- Placeholder Image -->
-              <div
+              <img
+                src="../../assets/images/logo.png"
                 class="absolute inset-0 bg-gradient-to-br from-rose-400 to-purple-400 rounded-3xl shadow-2xl"
-              >
-                <div
-                  class="absolute inset-0 flex items-center justify-center text-white text-2xl font-semibold"
-                >
-                  Hero Image
-                </div>
-              </div>
+              />
 
               <!-- Floating Elements -->
               <div

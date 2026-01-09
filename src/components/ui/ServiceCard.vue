@@ -7,7 +7,7 @@
     :delay="delay"
   >
     <!-- Icon -->
-    <div class="bg-gradient-to-br from-rose-500 to-purple-500 p-8 text-white">
+    <div class="bg-gradient-to-br from-rose-500 to-rose-700 p-8 text-white">
       <div
         class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
         v-html="service.icon"
