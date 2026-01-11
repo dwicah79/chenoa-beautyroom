@@ -12,11 +12,7 @@
         >
           <div class="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
             <div class="absolute inset-0 bg-gradient-to-br from-rose-300 to-purple-300">
-              <div
-                class="absolute inset-0 flex items-center justify-center text-white text-2xl font-semibold"
-              >
-                About Image
-              </div>
+              <img src="../../assets/images/testi4.jpg" class="object-cover" alt="" />
             </div>
           </div>
 
@@ -87,7 +83,7 @@
           </div>
 
           <div class="mt-8">
-            <BaseButton size="lg" variant="primary"> Pelajari Lebih Lanjut </BaseButton>
+            <BaseButton size="lg" variant="primary"> Booking Sekarang </BaseButton>
           </div>
         </div>
       </div>
