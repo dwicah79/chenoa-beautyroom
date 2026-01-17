@@ -1,5 +1,5 @@
 <template>
-  <section id="testimonials" class="py-20 bg-white">
+  <section id="testimonials" class="py-20 bg-white overflow-hidden">
     <div class="max-w-6xl mx-auto px-4">
       <!-- Section Header -->
       <div
@@ -13,10 +13,10 @@
         >
           Testimoni Klien
         </div>
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
           Apa Kata Mereka Tentang Kami
         </h2>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto">
           Dengarkan pengalaman klien-klien kami yang puas dengan layanan Chenoa Beauty Room
         </p>
       </div>
@@ -26,7 +26,7 @@
         <div
           v-for="(testimonial, index) in testimonials"
           :key="testimonial.name"
-          class="bg-gradient-to-br from-rose-50 to-purple-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+          class="bg-white border border-rose-100 rounded-2xl p-6 shadow-soft hover:shadow-soft-lg transition-all duration-300"
           v-motion
           :initial="{ opacity: 0, y: 30 }"
           :visible="{ opacity: 1, y: 0 }"
@@ -37,7 +37,7 @@
             <svg
               v-for="i in 5"
               :key="i"
-              class="w-5 h-5 text-yellow-400"
+              class="w-5 h-5 text-rose-500"
               fill="currentColor"
               viewBox="0 0 20 20"
             >
@@ -48,18 +48,18 @@
           </div>
 
           <!-- Review -->
-          <p class="text-gray-700 mb-6 italic">"{{ testimonial.review }}"</p>
+          <p class="text-slate-700 mb-6 italic">"{{ testimonial.review }}"</p>
 
           <!-- Author -->
           <div class="flex items-center gap-4">
             <div
-              class="w-12 h-12 bg-gradient-to-br from-rose-400 to-purple-400 rounded-full flex items-center justify-center text-white font-bold text-lg"
+              class="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center text-rose-600 font-bold text-lg"
             >
               {{ testimonial.initial }}
             </div>
             <div>
-              <div class="font-semibold text-gray-900">{{ testimonial.name }}</div>
-              <div class="text-sm text-gray-600">{{ testimonial.service }}</div>
+              <div class="font-semibold text-slate-800">{{ testimonial.name }}</div>
+              <div class="text-sm text-slate-600">{{ testimonial.service }}</div>
             </div>
           </div>
         </div>
@@ -67,7 +67,7 @@
 
       <!-- Rating Summary -->
       <div
-        class="mt-16 bg-gradient-to-r from-rose-600 to-purple-600 rounded-2xl p-8 text-white text-center"
+        class="mt-16 bg-rose-500 rounded-2xl p-8 text-white text-center"
         v-motion
         :initial="{ opacity: 0, y: 30 }"
         :visible="{ opacity: 1, y: 0 }"
@@ -76,15 +76,15 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div class="text-5xl font-bold mb-2">4.9</div>
-            <div class="text-rose-100">Rating Rata-rata</div>
+            <div class="text-rose-50">Rating Rata-rata</div>
           </div>
           <div>
             <div class="text-5xl font-bold mb-2">500+</div>
-            <div class="text-rose-100">Klien Puas</div>
+            <div class="text-rose-50">Klien Puas</div>
           </div>
           <div>
             <div class="text-5xl font-bold mb-2">127</div>
-            <div class="text-rose-100">Total Ulasan</div>
+            <div class="text-rose-50">Total Ulasan</div>
           </div>
         </div>
       </div>
