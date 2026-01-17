@@ -1,5 +1,5 @@
 <template>
-  <section id="gallery" class="py-20 bg-gray-50">
+  <section id="gallery" class="py-20 bg-white overflow-hidden">
     <div class="max-w-6xl mx-auto px-4">
       <!-- Section Header -->
       <div
@@ -13,8 +13,8 @@
         >
           Galeri Kami
         </div>
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Hasil Karya Terbaik Kami</h2>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Hasil Karya Terbaik Kami</h2>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto">
           Lihat hasil treatment dari klien-klien kami yang puas
         </p>
       </div>
@@ -34,15 +34,15 @@
           :class="[
             'px-6 py-3 rounded-full font-semibold transition-all duration-300 transform',
             activeFilter === filter.value
-              ? 'bg-linear-to-r from-rose-600 to-purple-600 text-white shadow-lg scale-105'
-              : 'bg-white text-gray-700 hover:bg-gray-100 shadow-md hover:shadow-lg hover:scale-105',
+              ? 'bg-rose-500 text-white shadow-soft-lg scale-105'
+              : 'bg-white text-slate-700 hover:bg-rose-50 border border-rose-100 shadow-soft hover:shadow-soft-lg hover:scale-105',
           ]"
         >
           <span class="relative">
             {{ filter.label }}
             <span
               v-if="activeFilter === filter.value"
-              class="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"
+              class="absolute -top-1 -right-1 w-2 h-2 bg-rose-100 rounded-full animate-pulse"
             ></span>
           </span>
         </button>
@@ -85,17 +85,6 @@
           </div>
         </div>
       </TransitionGroup>
-
-      <!-- View More -->
-      <div
-        class="text-center mt-12"
-        v-motion
-        :initial="{ opacity: 0, y: 20 }"
-        :visible="{ opacity: 1, y: 0 }"
-        :delay="400"
-      >
-        <BaseButton size="lg" variant="outline"> Lihat Semua Galeri </BaseButton>
-      </div>
     </div>
   </section>
 </template>
