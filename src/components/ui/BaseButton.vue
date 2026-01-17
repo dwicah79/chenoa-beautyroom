@@ -33,10 +33,9 @@ const props = defineProps({
 
 const variantClasses = computed(() => {
   const variants = {
-    primary: 'bg-rose-600 text-white hover:bg-rose-700 focus:ring-rose-500',
-    secondary: 'bg-gray-800 text-white hover:bg-gray-900 focus:ring-gray-500',
-    outline:
-      'border-2 border-rose-600 text-rose-600 hover:bg-rose-600 hover:text-white focus:ring-rose-500',
+    primary: 'bg-rose-500 text-white hover:bg-rose-600 focus:ring-rose-200 shadow-soft',
+    secondary: 'bg-slate-800 text-white hover:bg-slate-900 focus:ring-slate-300 shadow-soft',
+    outline: 'border-2 border-rose-500 text-rose-500 hover:bg-rose-50 focus:ring-rose-200 bg-white',
   }
   return variants[props.variant]
 })
