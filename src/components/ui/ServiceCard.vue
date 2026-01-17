@@ -1,13 +1,13 @@
 <template>
   <div
-    class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group"
+    class="bg-white rounded-2xl shadow-soft overflow-hidden hover:shadow-soft-lg transition-all duration-300 group border border-rose-100"
     v-motion
     :initial="{ opacity: 0, y: 30 }"
     :visible="{ opacity: 1, y: 0 }"
     :delay="delay"
   >
     <!-- Icon -->
-    <div class="bg-gradient-to-br from-rose-500 to-rose-700 p-8 text-white">
+    <div class="bg-rose-500 p-8 text-white">
       <div
         class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
         v-html="service.icon"
@@ -18,17 +18,17 @@
 
     <!-- Content -->
     <div class="p-6">
-      <p class="text-gray-600 mb-6">{{ service.description }}</p>
+      <p class="text-slate-600 mb-6">{{ service.description }}</p>
 
       <!-- Features -->
       <ul class="space-y-3 mb-6">
         <li
           v-for="(feature, index) in service.features"
           :key="index"
-          class="flex items-center gap-2 text-gray-700"
+          class="flex items-center gap-2 text-slate-700"
         >
           <svg
-            class="w-5 h-5 text-rose-500 flex-shrink-0"
+            class="w-5 h-5 text-rose-500 shrink-0"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -45,16 +45,14 @@
       </ul>
 
       <!-- Button -->
-      <button
-        class="w-full py-3 bg-rose-50 text-rose-600 rounded-lg font-semibold hover:bg-rose-600 hover:text-white transition-all duration-300"
-      >
-        Pilih Layanan
-      </button>
+      <BookingButton :service-name="service.title" variant="outline" size="md" class="w-full" />
     </div>
   </div>
 </template>
 
 <script setup>
+import BookingButton from './BookingButton.vue'
+
 defineProps({
   service: {
     type: Object,
