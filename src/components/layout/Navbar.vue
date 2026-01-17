@@ -118,10 +118,7 @@
             v-for="item in menuItems"
             :key="item.name"
             :href="item.href"
-            @click.prevent="
-              scrollToSection(item.href)
-              closeMobileMenu()
-            "
+            @click.prevent="handleMobileMenuClick(item.href)"
             :class="[
               'block font-medium transition-colors',
               activeSection === item.href
@@ -131,14 +128,7 @@
           >
             {{ item.name }}
           </a>
-          <BaseButton
-            variant="primary"
-            class="w-full"
-            @click="
-              scrollToSection('#services')
-              closeMobileMenu()
-            "
-          >
+          <BaseButton variant="primary" class="w-full" @click="handleMobileMenuClick('#services')">
             Booking Sekarang
           </BaseButton>
         </div>
@@ -179,6 +169,11 @@ const scrollToSection = (href) => {
     // Update active section immediately
     activeSection.value = href
   }
+}
+
+const handleMobileMenuClick = (href) => {
+  scrollToSection(href)
+  closeMobileMenu()
 }
 
 const updateActiveSection = () => {
