@@ -9,8 +9,9 @@
       <div class="flex justify-between items-center h-20">
         <!-- Logo -->
         <a
-          href="#"
-          class="flex items-center space-x-2"
+          href="#hero"
+          @click.prevent="scrollToSection('#hero')"
+          class="flex items-center space-x-2 cursor-pointer"
           v-motion
           :initial="{ opacity: 0, x: -20 }"
           :visible="{ opacity: 1, x: 0 }"
@@ -40,13 +41,16 @@
             v-for="(item, index) in menuItems"
             :key="item.name"
             :href="item.href"
+            @click.prevent="scrollToSection(item.href)"
             v-motion
             :initial="{ opacity: 0, y: -20 }"
             :visible="{ opacity: 1, y: 0 }"
             :delay="200 + index * 50"
             :class="[
-              'text-sm font-medium transition-colors hover:text-rose-500',
-              isScrolled ? 'text-slate-700' : 'text-slate-700',
+              'text-sm font-medium transition-all duration-300',
+              activeSection === item.href
+                ? 'text-rose-500 font-semibold'
+                : 'text-slate-700 hover:text-rose-500',
             ]"
           >
             {{ item.name }}
@@ -54,6 +58,7 @@
           <BaseButton
             variant="primary"
             size="sm"
+            @click="scrollToSection('#services')"
             v-motion
             :initial="{ opacity: 0, scale: 0.8 }"
             :visible="{ opacity: 1, scale: 1 }"
@@ -113,12 +118,29 @@
             v-for="item in menuItems"
             :key="item.name"
             :href="item.href"
-            @click="closeMobileMenu"
-            class="block text-gray-700 hover:text-rose-500 font-medium transition-colors"
+            @click.prevent="
+              scrollToSection(item.href)
+              closeMobileMenu()
+            "
+            :class="[
+              'block font-medium transition-colors',
+              activeSection === item.href
+                ? 'text-rose-500 font-semibold'
+                : 'text-slate-700 hover:text-rose-500',
+            ]"
           >
             {{ item.name }}
           </a>
-          <BaseButton variant="primary" class="w-full"> Booking Sekarang </BaseButton>
+          <BaseButton
+            variant="primary"
+            class="w-full"
+            @click="
+              scrollToSection('#services')
+              closeMobileMenu()
+            "
+          >
+            Booking Sekarang
+          </BaseButton>
         </div>
       </div>
     </transition>
@@ -131,6 +153,7 @@ import BaseButton from '@/components/ui/BaseButton.vue'
 
 const isScrolled = ref(false)
 const isMobileMenuOpen = ref(false)
+const activeSection = ref('#hero')
 
 const menuItems = [
   { name: 'Beranda', href: '#hero' },
@@ -138,11 +161,43 @@ const menuItems = [
   { name: 'Layanan', href: '#services' },
   { name: 'Galeri', href: '#gallery' },
   { name: 'Testimoni', href: '#testimonials' },
-  { name: 'Kontak', href: '#contact' },
 ]
+
+const scrollToSection = (href) => {
+  const targetId = href.replace('#', '')
+  const targetElement = document.getElementById(targetId)
+
+  if (targetElement) {
+    const navbarHeight = 80 // Height of fixed navbar
+    const targetPosition = targetElement.offsetTop - navbarHeight
+
+    window.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth',
+    })
+
+    // Update active section immediately
+    activeSection.value = href
+  }
+}
+
+const updateActiveSection = () => {
+  const sections = menuItems.map((item) => item.href.replace('#', ''))
+  const navbarHeight = 80
+  const scrollPosition = window.scrollY + navbarHeight + 100 // Add offset for better detection
+
+  for (let i = sections.length - 1; i >= 0; i--) {
+    const section = document.getElementById(sections[i])
+    if (section && section.offsetTop <= scrollPosition) {
+      activeSection.value = `#${sections[i]}`
+      break
+    }
+  }
+}
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 50
+  updateActiveSection()
 }
 
 const toggleMobileMenu = () => {
@@ -155,6 +210,7 @@ const closeMobileMenu = () => {
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
+  updateActiveSection() // Set initial active section
 })
 
 onUnmounted(() => {
