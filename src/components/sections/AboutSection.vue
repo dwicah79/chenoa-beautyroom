@@ -1,24 +1,28 @@
 <template>
-  <section id="about" class="py-20 bg-white">
+  <section id="about" class="py-20 bg-white overflow-hidden">
     <div class="max-w-7xl mx-auto px-4">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <!-- Image -->
         <div
-          class="relative order-2 lg:order-1"
+          class="relative order-2 lg:order-1 px-8 lg:px-0"
           v-motion
           :initial="{ opacity: 0, x: -50 }"
           :visible="{ opacity: 1, x: 0 }"
           :duration="800"
         >
           <div class="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
-            <div class="absolute inset-0 bg-gradient-to-br from-rose-300 to-purple-300">
+            <div class="absolute inset-0 bg-rose-100">
               <img src="../../assets/images/testi4.jpg" class="object-cover" alt="" />
             </div>
           </div>
 
           <!-- Decorative Element -->
-          <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-rose-100 rounded-full -z-10"></div>
-          <div class="absolute -top-6 -left-6 w-24 h-24 bg-purple-100 rounded-full -z-10"></div>
+          <div
+            class="absolute -bottom-6 right-2 lg:-right-6 w-32 h-32 bg-rose-50 rounded-full -z-10"
+          ></div>
+          <div
+            class="absolute -top-6 left-2 lg:-left-6 w-24 h-24 bg-rose-100 rounded-full -z-10"
+          ></div>
         </div>
 
         <!-- Content -->
@@ -35,14 +39,14 @@
           >
             Tentang Kami
           </div>
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
             Karena Setiap Wanita Pantas Merasa Cantik Setiap Hari
           </h2>
-          <p class="text-lg text-gray-600 mb-6">
+          <p class="text-lg text-slate-600 mb-6">
             Chenoa Beauty Room hadir untuk memberikan pengalaman kecantikan yang tak terlupakan.
             Kami berkomitmen memberikan layanan terbaik dengan hasil yang memuaskan.
           </p>
-          <p class="text-lg text-gray-600 mb-8">
+          <p class="text-lg text-slate-600 mb-8">
             Dengan terapis profesional dan produk berkualitas tinggi, kami memastikan setiap
             treatment yang Anda dapatkan memberikan hasil maksimal dan pengalaman yang menyenangkan.
           </p>
@@ -62,7 +66,7 @@
                 class="flex-shrink-0 w-10 h-10 bg-rose-100 rounded-lg flex items-center justify-center"
               >
                 <svg
-                  class="w-6 h-6 text-rose-600"
+                  class="w-6 h-6 text-rose-500"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -76,8 +80,8 @@
                 </svg>
               </div>
               <div>
-                <h3 class="font-semibold text-gray-900 mb-1">{{ feature.title }}</h3>
-                <p class="text-sm text-gray-600">{{ feature.description }}</p>
+                <h3 class="font-semibold text-slate-800 mb-1">{{ feature.title }}</h3>
+                <p class="text-sm text-slate-600">{{ feature.description }}</p>
               </div>
             </div>
           </div>
