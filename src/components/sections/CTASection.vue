@@ -1,17 +1,17 @@
 <template>
-  <section id="cta" class="py-20 bg-gradient-to-br from-rose-600 to-purple-600">
+  <section id="cta" class="py-20 bg-white overflow-hidden">
     <div class="max-w-6xl mx-auto px-4">
       <div
-        class="text-center text-white"
+        class="text-center"
         v-motion
         :initial="{ opacity: 0, y: 30 }"
         :visible="{ opacity: 1, y: 0 }"
         :duration="800"
       >
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800 mb-6">
           Siap Tampil Lebih Cantik dan Percaya Diri?
         </h2>
-        <p class="text-xl md:text-2xl text-rose-100 mb-8 max-w-3xl mx-auto">
+        <p class="text-xl md:text-2xl text-neutral-600 mb-8 max-w-3xl mx-auto">
           Booking sekarang dan dapatkan konsultasi gratis untuk treatment pertama Anda
         </p>
 
@@ -26,19 +26,19 @@
           <div
             v-for="(feature, index) in features"
             :key="feature.title"
-            class="bg-white/10 backdrop-blur-sm rounded-xl p-6"
+            class="bg-neutral-50 rounded-xl p-6 border border-neutral-200"
             v-motion
             :initial="{ opacity: 0, scale: 0.9 }"
             :visible="{ opacity: 1, scale: 1 }"
             :delay="300 + index * 100"
           >
             <div
-              class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4"
+              class="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-4"
             >
-              <div v-html="feature.icon"></div>
+              <div v-html="feature.icon" class="text-rose-600"></div>
             </div>
-            <h3 class="font-semibold text-lg mb-2">{{ feature.title }}</h3>
-            <p class="text-rose-100 text-sm">{{ feature.description }}</p>
+            <h3 class="font-semibold text-lg mb-2 text-neutral-800">{{ feature.title }}</h3>
+            <p class="text-neutral-600 text-sm">{{ feature.description }}</p>
           </div>
         </div>
 
@@ -50,37 +50,12 @@
           :visible="{ opacity: 1, y: 0 }"
           :delay="600"
         >
-          <a
-            href="https://wa.me/6281234567890"
-            target="_blank"
-            class="inline-flex items-center gap-3 px-8 py-4 bg-white text-rose-600 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105 shadow-xl"
-          >
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"
-              />
-            </svg>
-            Booking via WhatsApp
-          </a>
-          <a
-            href="tel:+6281234567890"
-            class="inline-flex items-center gap-3 px-8 py-4 bg-transparent border-2 border-white text-white rounded-xl font-bold text-lg hover:bg-white hover:text-rose-600 transition-all duration-300"
-          >
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-              />
-            </svg>
-            Hubungi Kami
-          </a>
+          <BookingButton variant="primary" size="lg"> Booking via WhatsApp </BookingButton>
         </div>
 
         <!-- Additional Info -->
         <div
-          class="mt-8 text-rose-100"
+          class="mt-8 text-neutral-600"
           v-motion
           :initial="{ opacity: 0 }"
           :visible="{ opacity: 1 }"
@@ -94,25 +69,27 @@
 </template>
 
 <script setup>
+import BookingButton from '@/components/ui/BookingButton.vue'
+
 const features = [
   {
     title: 'Konsultasi Gratis',
     description: 'Dapatkan konsultasi treatment yang sesuai',
-    icon: `<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
     </svg>`,
   },
   {
     title: 'Booking Mudah',
     description: 'Reservasi langsung via WhatsApp',
-    icon: `<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
     </svg>`,
   },
   {
     title: 'Promo Menarik',
     description: 'Dapatkan diskon spesial hari ini',
-    icon: `<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
     </svg>`,
   },
