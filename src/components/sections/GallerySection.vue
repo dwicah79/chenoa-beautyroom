@@ -62,25 +62,22 @@
             item.span ? 'col-span-2 row-span-2' : '',
           ]"
         >
-          <div
-            :class="[
-              'bg-linear-to-br',
-              item.color,
-              'aspect-square w-full flex items-center justify-center text-white font-semibold',
-            ]"
-          >
-            <div class="text-center">
-              <div class="text-2xl mb-2">{{ item.emoji }}</div>
-              <div>{{ item.title }}</div>
-            </div>
+          <!-- Image Container -->
+          <div class="aspect-square w-full overflow-hidden bg-rose-100">
+            <img
+              :src="item.image"
+              :alt="item.title"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
           </div>
+
           <!-- Overlay -->
           <div
-            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+            class="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center"
           >
-            <div class="text-white text-center p-4">
-              <p class="font-semibold">{{ item.title }}</p>
-              <p class="text-sm text-gray-200">{{ item.category }}</p>
+            <div class="text-white text-center p-4 pb-6 w-full">
+              <p class="font-semibold text-lg mb-1">{{ item.title }}</p>
+              <p class="text-sm text-rose-200">{{ item.category }}</p>
             </div>
           </div>
         </div>
@@ -107,87 +104,75 @@ const galleryItems = [
     title: 'Nail Art Classic',
     category: 'Nail Art',
     type: 'nailart',
-    emoji: '💅',
-    color: 'from-pink-400 to-rose-500',
+    image: new URL('../../assets/images/testi1.jpg', import.meta.url).href,
     span: true,
   },
   {
     title: 'Natural Lash',
     category: 'Lash Lift',
     type: 'lashlift',
-    emoji: '✨',
-    color: 'from-purple-400 to-pink-500',
+    image: new URL('../../assets/images/testi2.jpg', import.meta.url).href,
   },
   {
     title: 'Volume Lashes',
     category: 'Eyelash Extension',
     type: 'eyelash',
-    emoji: '👁️',
-    color: 'from-rose-400 to-red-500',
+    image: new URL('../../assets/images/testi3.jpg', import.meta.url).href,
   },
   {
     title: 'French Manicure',
     category: 'Nail Art',
     type: 'nailart',
-    emoji: '💖',
-    color: 'from-pink-500 to-rose-600',
+    image: new URL('../../assets/images/testi4.jpg', import.meta.url).href,
   },
   {
     title: 'Glitter Nails',
     category: 'Nail Art',
     type: 'nailart',
-    emoji: '⭐',
-    color: 'from-purple-500 to-pink-600',
+    image: new URL('../../assets/images/testi1.jpg', import.meta.url).href,
   },
   {
     title: 'Classic Lash',
     category: 'Eyelash Extension',
     type: 'eyelash',
-    emoji: '👀',
-    color: 'from-rose-500 to-pink-600',
+    image: new URL('../../assets/images/testi2.jpg', import.meta.url).href,
     span: true,
   },
   {
     title: 'Mega Volume',
     category: 'Eyelash Extension',
     type: 'eyelash',
-    emoji: '💫',
-    color: 'from-pink-600 to-purple-600',
+    image: new URL('../../assets/images/testi3.jpg', import.meta.url).href,
   },
   {
     title: 'Ombre Nails',
     category: 'Nail Art',
     type: 'nailart',
-    emoji: '🎨',
-    color: 'from-rose-600 to-purple-700',
+    image: new URL('../../assets/images/testi4.jpg', import.meta.url).href,
   },
   {
     title: 'Natural Lift',
     category: 'Lash Lift',
     type: 'lashlift',
-    emoji: '🌟',
-    color: 'from-purple-600 to-pink-700',
+    image: new URL('../../assets/images/testi1.jpg', import.meta.url).href,
   },
   {
     title: 'Acrylic Nails',
     category: 'Nail Art',
     type: 'nailart',
-    emoji: '💎',
-    color: 'from-pink-700 to-rose-800',
+    image: new URL('../../assets/images/testi2.jpg', import.meta.url).href,
   },
   {
     title: 'Hybrid Lashes',
     category: 'Eyelash Extension',
     type: 'eyelash',
-    emoji: '✨',
-    color: 'from-rose-700 to-purple-800',
+    image: new URL('../../assets/images/testi3.jpg', import.meta.url).href,
   },
   {
     title: 'Keratin Lift',
     category: 'Lash Lift',
     type: 'lashlift',
-    emoji: '💫',
-    color: 'from-purple-700 to-pink-800',
+    image: new URL('../../assets/images/testi4.jpg', import.meta.url).href,
   },
 ]
 
