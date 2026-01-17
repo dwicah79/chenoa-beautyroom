@@ -1,11 +1,11 @@
 <template>
   <nav
     :class="[
-      'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+      'fixed top-0 left-0 right-0 z-50 transition-all duration-300 overflow-x-hidden',
       isScrolled ? 'bg-white shadow-md' : 'bg-white',
     ]"
   >
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-hidden">
       <div class="flex justify-between items-center h-20">
         <!-- Logo -->
         <a
@@ -19,7 +19,7 @@
           <span
             :class="[
               'text-2xl font-bold transition-colors',
-              isScrolled ? 'text-rose-600' : 'text-rose-600',
+              isScrolled ? 'text-rose-500' : 'text-rose-500',
             ]"
           >
             Chenoa
@@ -27,7 +27,7 @@
           <span
             :class="[
               'text-2xl font-light transition-colors',
-              isScrolled ? 'text-black' : 'text-black',
+              isScrolled ? 'text-slate-800' : 'text-slate-800',
             ]"
           >
             Beauty Room
@@ -46,7 +46,7 @@
             :delay="200 + index * 50"
             :class="[
               'text-sm font-medium transition-colors hover:text-rose-500',
-              isScrolled ? 'text-gray-700' : 'black',
+              isScrolled ? 'text-slate-700' : 'text-slate-700',
             ]"
           >
             {{ item.name }}
@@ -68,7 +68,7 @@
           @click="toggleMobileMenu"
           :class="[
             'md:hidden p-2 rounded-lg transition-colors',
-            isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white/10',
+            isScrolled ? 'text-slate-700 hover:bg-slate-100' : 'text-slate-700 hover:bg-slate-100',
           ]"
           aria-label="Toggle menu"
         >
