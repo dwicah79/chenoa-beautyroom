@@ -1,5 +1,5 @@
 <template>
-  <section id="why-choose" class="py-20 bg-white">
+  <section id="why-choose" class="py-20 bg-white overflow-hidden">
     <div class="max-w-6xl mx-auto px-4">
       <!-- Section Header -->
       <div
@@ -13,10 +13,10 @@
         >
           Mengapa Memilih Kami
         </div>
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
           Alasan Kenapa Harus Chenoa Beauty Room
         </h2>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto">
           Kami berkomitmen memberikan pengalaman terbaik untuk setiap klien
         </p>
       </div>
@@ -33,12 +33,12 @@
           :delay="index * 100"
         >
           <div
-            class="w-20 h-20 bg-gradient-to-br from-rose-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg"
+            class="w-20 h-20 bg-rose-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-soft"
           >
             <div v-html="reason.icon" class="text-white"></div>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">{{ reason.title }}</h3>
-          <p class="text-gray-600">{{ reason.description }}</p>
+          <h3 class="text-xl font-bold text-slate-800 mb-3">{{ reason.title }}</h3>
+          <p class="text-slate-600">{{ reason.description }}</p>
         </div>
       </div>
     </div>
