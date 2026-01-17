@@ -6,9 +6,9 @@ import WhatsAppButton from './components/ui/WhatsAppButton.vue'
 </script>
 
 <template>
-  <div class="min-h-screen bg-white font-sans antialiased">
+  <div class="min-h-screen bg-white font-sans antialiased overflow-x-hidden">
     <Navbar />
-    <main>
+    <main class="overflow-x-hidden">
       <RouterView />
     </main>
     <Footer />
