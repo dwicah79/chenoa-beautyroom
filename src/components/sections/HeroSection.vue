@@ -1,21 +1,21 @@
 <template>
   <section
     id="hero"
-    class="relative min-h-screen flex items-center justify-center overflow-hidden bg-neutral-50"
+    class="relative min-h-screen flex items-center justify-center overflow-hidden bg-white"
   >
     <!-- Background Decoration -->
     <div class="absolute inset-0 overflow-hidden">
       <div
-        class="absolute -top-1/2 -right-1/2 w-full h-full bg-rose-200/20 rounded-full blur-3xl"
+        class="absolute top-0 right-0 w-3/4 h-3/4 bg-rose-50 rounded-full blur-3xl opacity-60"
       ></div>
       <div
-        class="absolute -bottom-1/2 -left-1/2 w-full h-full bg-purple-200/20 rounded-full blur-3xl"
+        class="absolute bottom-0 left-0 w-3/4 h-3/4 bg-rose-100/30 rounded-full blur-3xl opacity-60"
       ></div>
     </div>
 
     <!-- Content -->
     <div class="relative z-10 w-full px-4 py-20">
-      <div class="max-w-7xl mx-auto">
+      <div class="max-w-7xl mx-auto overflow-hidden">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <!-- Text Content -->
           <div
@@ -25,12 +25,14 @@
             :visible="{ opacity: 1, x: 0 }"
             :duration="800"
           >
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1
+              class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 mb-6 leading-tight"
+            >
               Tampil Lebih
-              <span class="text-rose-600"> Percaya Diri</span>
+              <span class="text-rose-500"> Percaya Diri</span>
               dengan Perawatan Terbaik
             </h1>
-            <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0">
+            <p class="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto lg:mx-0">
               Chenoa Beauty Room menyediakan layanan Nail Art, Lash Lift, dan Eyelash Extension
               profesional dengan hasil natural, rapi, dan tahan lama.
             </p>
@@ -48,16 +50,16 @@
               :delay="400"
             >
               <div class="text-center lg:text-left">
-                <div class="text-3xl font-bold text-rose-600">500+</div>
-                <div class="text-sm text-gray-600">Klien Puas</div>
+                <div class="text-3xl font-bold text-rose-500">500+</div>
+                <div class="text-sm text-slate-600">Klien Puas</div>
               </div>
               <div class="text-center lg:text-left">
-                <div class="text-3xl font-bold text-rose-600">4.9</div>
-                <div class="text-sm text-gray-600">Rating</div>
+                <div class="text-3xl font-bold text-rose-500">4.9</div>
+                <div class="text-sm text-slate-600">Rating</div>
               </div>
               <div class="text-center lg:text-left">
-                <div class="text-3xl font-bold text-rose-600">3+</div>
-                <div class="text-sm text-gray-600">Tahun Pengalaman</div>
+                <div class="text-3xl font-bold text-rose-500">3+</div>
+                <div class="text-sm text-slate-600">Tahun Pengalaman</div>
               </div>
             </div>
           </div>
@@ -71,7 +73,7 @@
             :duration="800"
             :delay="200"
           >
-            <div class="relative aspect-square max-w-lg mx-auto">
+            <div class="relative aspect-square max-w-lg mx-auto overflow-visible">
               <!-- Placeholder Image -->
               <img
                 src="../../assets/images/logo.png"
@@ -80,7 +82,7 @@
 
               <!-- Floating Elements -->
               <div
-                class="absolute -top-6 -right-6 bg-white rounded-2xl shadow-xl p-4"
+                class="absolute top-4 right-4 lg:-top-6 lg:-right-6 bg-white rounded-2xl shadow-xl p-4 max-w-[200px]"
                 v-motion
                 :initial="{ opacity: 0, scale: 0 }"
                 :visible="{ opacity: 1, scale: 1 }"
